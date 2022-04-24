@@ -1,0 +1,19 @@
+{
+  "name": "plant-iot",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start-publisher": "nodemon mqtt/test/publisher.js",
+    "start-subscriber": "nodemon mqtt/test/subscriber.js",
+    "start-broker": "nodemon mqtt/broker.js"
+  },
+  "author": "Thomas Hewett",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "aedes": "^0.46.3",
+    "dotenv": "^16.0.0",
+    "mqtt": "^4.3.7",
+    "nodemon": "^2.0.15"
+  }
+}
