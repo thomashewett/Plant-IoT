@@ -1,8 +1,9 @@
 // subscriber.js 
 const mqtt = require('mqtt') 
+require('dotenv').config()
 //const client = mqtt.connect(process.env.BROKER_URL) 
 //const topicName = 'test/tommyhh/connection' 
-
+console.log(process.env);
 const client = mqtt.connect(process.env.LOCALHOST) 
 const topicName = 'aedes/test' 
 
