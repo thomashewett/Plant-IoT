@@ -24,8 +24,8 @@ router.get('/', (req, res) => {
 // @access Public
 router.get('/:id', (req, res) => {
     Plant.findById(req.params.id)
-        .then(book => res.json(book))
-        .catch(err => res.status(404).json({ noplantfound: 'No Book found' }));
+        .then(plant => res.json(plant))
+        .catch(err => res.status(404).json({ noplantfound: 'No Plant found' }));
 });
 
 // @route GET api/plants
@@ -38,22 +38,22 @@ router.post('/', (req, res) => {
 });
 
 // @route GET api/plants/:id
-// @description Update book
+// @description Update plant
 // @access Public
 router.put('/:id', (req, res) => {
     Plant.findByIdAndUpdate(req.params.id, req.body)
-        .then(book => res.json({ msg: 'Updated successfully' }))
+        .then(plant => res.json({ msg: 'Updated successfully' }))
         .catch(err =>
             res.status(400).json({ error: 'Unable to update the Database' })
         );
 });
 
 // @route GET api/plants/:id
-// @description Delete book by id
+// @description Delete plant by id
 // @access Public
 router.delete('/:id', (req, res) => {
     Plant.findByIdAndRemove(req.params.id, req.body)
-        .then(book => res.json({ mgs: 'Book entry deleted successfully' }))
+        .then(plant => res.json({ mgs: 'Plant entry deleted successfully' }))
         .catch(err => res.status(404).json({ error: 'No such a plant' }));
 });
 
