@@ -30,11 +30,11 @@ jobs:
     needs: build
     
     steps:
-      # Kill Plant-IoT server, if running already
+      # Kill Plant IoT server, if running already
       - name: Kill docker images
         run: docker-compose down || true
 
-      # Run Plant-IoT server
-      - name: Run Plant-IoT Server
+      # Run Plant IoT server
+      - name: Run Plant IoT Server
         run: |
           docker-compose up
