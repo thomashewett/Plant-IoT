@@ -25,6 +25,7 @@ jobs:
       - name: Compose new docker images
         run: |
           docker-compose build --no-cache
+          
   deploy:
     runs-on: self-hosted
     needs: build
@@ -37,4 +38,4 @@ jobs:
       # Run Plant IoT server
       - name: Run Plant IoT Server
         run: |
-          docker-compose up
+          docker-compose up --detach
