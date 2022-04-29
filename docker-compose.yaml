@@ -3,16 +3,16 @@ services:
   
   # ui:
   #  build:
-  #     context: ./ui
+  #     context: ./client
   #     dockerfile: Dockerfile.dev
   #  ports:
   #   -  3000:3000
-  #  container_name: mern-ui
+  #  container_name: plant-client
   #  networks:
-  #   -  mern-stack-net
+  #   -  plant-net
   #  volumes:
-  #   -  ./ui/src:/usr/app/src
-  #   -  ./ui/public:/usr/app/public
+  #   -  ./client/src:/usr/app/src
+  #   -  ./client/public:/usr/app/public
   #  depends_on:
   #   - api
   #  stdin_open: true
@@ -32,7 +32,7 @@ services:
    depends_on:
     - db
    environment:
-    - MONGO_URL=mongodb://db:27017
+    - MONGO_URL=mongodb://db:27017/Plant-IoT
     - CLIENT=http://localhost:3000
 
   db:
