@@ -2,7 +2,8 @@ require('dotenv').config('.env')
 const mongoose = require('mongoose');
 
 //const db = process.env.MONGO_URI;
-const db = process.env.MONGO_URL;
+//const db = process.env.MONGO_URL;
+const db = "mongodb://db:27017/Plant-IoT";
 
 const connectDB = async () => {
   try {

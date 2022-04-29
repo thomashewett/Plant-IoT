@@ -32,13 +32,14 @@ services:
    depends_on:
     - db
    environment:
-    - MONGO_URL=mongodb://db:27017/Plant-IoT
+    - MONGO_URL="mongodb://db:27017/Plant-IoT"
     - CLIENT=http://localhost:3000
     - MONGO_URI="mongodb://localhost:27017/Plant-Iot"
     - PORT=8082
 
   db:
-    image: mongo
+    #4.4.6 is required to deploy on raspberry pi. Use 5 for full prod.
+    image: mongo:4.4.6
     ports:
       - 27017:27017
     container_name: mongo-db
