@@ -32,7 +32,7 @@ jobs:
     steps:
       # Kill Plant-IoT server, if running already
       - name: Kill docker images
-        run: docker-compose down
+        run: docker-compose down || true
 
       # Run Plant-IoT server
       - name: Run Plant-IoT Server
