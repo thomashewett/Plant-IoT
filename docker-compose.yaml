@@ -1,0 +1,54 @@
+version: "3"
+services:
+  
+  # ui:
+  #  build:
+  #     context: ./ui
+  #     dockerfile: Dockerfile.dev
+  #  ports:
+  #   -  3000:3000
+  #  container_name: mern-ui
+  #  networks:
+  #   -  mern-stack-net
+  #  volumes:
+  #   -  ./ui/src:/usr/app/src
+  #   -  ./ui/public:/usr/app/public
+  #  depends_on:
+  #   - api
+  #  stdin_open: true
+  #  tty: true
+
+  api:
+   build:
+      context: ./server
+      dockerfile: Dockerfile
+   ports:
+     - 8082:8082
+   container_name: plant-api
+   networks:
+     - plant-net
+   volumes:
+    - ./server/src:/usr/app/src
+   depends_on:
+    - db
+   environment:
+    - MONGO_URL=mongodb://db:27017
+    - CLIENT=http://localhost:3000
+
+  db:
+    image: mongo
+    ports:
+      - 27017:27017
+    container_name: mongo-db
+    networks:
+      - plant-net
+    volumes:
+      - mongo-data:/data/db
+
+networks:
+  plant-net:
+    driver: bridge
+
+volumes:
+  mongo-data:
+    driver: local

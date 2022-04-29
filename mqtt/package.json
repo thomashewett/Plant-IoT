@@ -1,0 +1,16 @@
+{
+  "name": "mqtt-broker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start-broker": "nodemon ./src/broker.js"
+  },
+  "author": "Thomas Hewett",
+  "license": "ISC",
+  "dependencies": {
+    "aedes": "^0.46.3",
+    "mqtt": "^4.3.7",
+    "nodemon": "^2.0.15"
+  }
+}
