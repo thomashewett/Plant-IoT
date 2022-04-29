@@ -4,7 +4,7 @@ var cors = require('cors');
 
 // routes
 const plants = require('./routes/api/plants');
-
+//server.js
 const app = express();
 
 // Connect Database
