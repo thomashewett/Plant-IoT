@@ -1,22 +1,22 @@
 version: "3"
 services:
   
-  # ui:
-  #  build:
-  #     context: ./client
-  #     dockerfile: Dockerfile.dev
-  #  ports:
-  #   -  3000:3000
-  #  container_name: plant-client
-  #  networks:
-  #   -  plant-net
-  #  volumes:
-  #   -  ./client/src:/usr/app/src
-  #   -  ./client/public:/usr/app/public
-  #  depends_on:
-  #   - api
-  #  stdin_open: true
-  #  tty: true
+  client:
+   build:
+      context: ./client
+      dockerfile: Dockerfile.dev
+   ports:
+    -  3000:3000
+   container_name: plant-client
+   networks:
+    -  plant-net
+   volumes:
+    -  ./client/src:/usr/app/src
+    -  ./client/public:/usr/app/public
+   depends_on:
+    - api
+   stdin_open: true
+   tty: true
 
   api:
    build:
