@@ -5,7 +5,7 @@ import { Dashboard } from './components/Dashboard';
 import { PlantList } from './components/PlantList';
 import { Add } from './components/Add';
 import './App.css';
-import "./lib/fontawesome-free-6.1.1-web/css/all.min.css";
+import "./lib/font-awesome/css/all.min.css";
 
 function App() {
   return (
