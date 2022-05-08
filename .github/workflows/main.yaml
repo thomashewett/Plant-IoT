@@ -38,4 +38,4 @@ jobs:
       # Run Plant IoT server
       - name: Run Plant IoT Server
         run: |
-          docker-compose up --detach &
+          docker-compose up &
